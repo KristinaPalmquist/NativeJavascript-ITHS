@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labb 2</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/53baa52727.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a id="navHome" class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a id='navActivities' class="nav-link" href="activities.html">Activities</a>
+          </li>
+          <li class="nav-item">
+            <a id='navCities' class="nav-link" href="cities.html">Cities</a>
+          </li>
+          <li class="nav-item">
+            <a id="navChart" class="nav-link" href="chart.html">Chart</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Welcome Section -->
+  <section class="welcome">
+    <h2 id="welcome">Welcome</h2>
+  </section>
+
+  <!-- API result in Bootstrap Cards -->
+  <section id="activitySection">
+    <div id="activityDiv">
+      <h2 id="activityHeader">Find a fun activity!</h2>
+      <div id="activityCardsDiv"></div>
+      <div id="actFinalP">
+        <p id="pFinal1" class= activities>
+          That are all the suggestions you are getting this time!</p>
+        <p id="pFinal2" class= activities>
+          ❤ ❤ ❤ Please check in again for new ideas ❤ ❤ ❤</p>
+      </div>
+    </div>
+  </section>
+
+<!-- Footer -->
+  <footer class="text-center text-white">
+    <div class="container pt-4 socialMedia">
+      <!-- Social media -->
+      <section class="mb-4">
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="https://facebook.com"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-facebook-f"></i></a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="https://twitter.com"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-twitter"></i></a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="https://instagram.com"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-instagram"></i></a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="https://se.linkedin.com/in/kristinapalmquist"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-linkedin"></i></a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="https://github.com/KristinaPalmquist"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-github"></i></a>
+      </section>
+    </div>
+    <!-- Copyright -->
+    <div class="copyright text-center text-dark p-3">
+      © 2022 Copyright:
+      <a class="text-dark" href="https://github.com/KristinaPalmquist">Kristina Palmquist</a>
+    </div>
+  </footer>
+
+  <!-- Script links -->
+  <script src="activities.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
+
+<!-- Validated 2022-11-13 // KP -->
