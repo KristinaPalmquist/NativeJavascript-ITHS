@@ -62,29 +62,44 @@ fetch('https://api.openbrewerydb.org/v1/breweries/random?size=10')
     for (let i = 0; i < 10; i++) {
       let actNbr = i + 1;
       let brewery = data[i];
+
+      console.log(brewery);
+
       actNbrs.push(actNbr);
       sessionStorage.setItem('nbr' + 1, actNbrs);
       let locationNames = JSON.parse(sessionStorage.getItem('locations'));
       let breweryType =
         brewery.brewery_type.substring(0, 1).toUpperCase() +
         brewery.brewery_type.substring(1).toLowerCase();
-      activityCards.innerHTML += `<div id="divActivity${actNbr}"  class="card" style="width: 18rem;">
-            <img id='img${actNbr}' class="card-img-top" src = ${imageSrcArray[actNbr]}>
-            <div class="card-header">
-                <p class= "activityNbr">Brewery nr ${actNbr}:</p>
-                </div>
-            <div class="card-body">
-                <h3 class="card-title">${brewery.name}</h3>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="activitiesList">Type: ${breweryType}</li>
-                <li class="activitiesList">Current location: ${brewery.city} / ${brewery.state} / ${brewery.country}</li>
-                <li class="activitiesList">
-                
-                Website: <a href='${brewery.website_url}' target=_blank >${brewery.website_url}</a></li>
-                <li id='location${actNbr}' class="activitiesList locations">Suggested new location: ${locationNames[actNbr]}</li>
-            </ul>
-        </div>`;
+      activityCards.innerHTML += `
+      <div id="divActivity${actNbr}"  class="card" style="width: 18rem;">
+        <img id='img${actNbr}' class="card-img-top" src = ${imageSrcArray[actNbr]}>
+        <div class="card-header">
+            <p>Brewery nr ${actNbr}:</p>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">${brewery.name}</h5>
+          <div class="card-list">
+          
+              <li>Type: ${breweryType}</li>
+              <li>
+                Current location: ${brewery.address_1}, 
+                ${brewery.city}, ${brewery.state}, ${brewery.country}
+              </li>
+              <li>
+                Website: 
+                <a href='${brewery.website_url}' target=_blank >
+                  ${brewery.website_url}
+                </a>
+              </li>
+              <li>
+                Suggested new location: 
+                <strong>${locationNames[actNbr]}</strong>
+              </li>
+         
+          </div>
+        </div>
+      </div>`;
     }
   });
 

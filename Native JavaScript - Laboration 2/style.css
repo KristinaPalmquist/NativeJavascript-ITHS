@@ -164,7 +164,7 @@ h2 {
   padding-bottom: 2vh;
 }
 
-#activity-card-div {
+#activity-cards-div {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -177,12 +177,20 @@ h2 {
 }
 
 .card {
-    height: clamp(min-content, 50vh, max-content);
+  height: 100%;
+
+  /* height: clamp(min-content, 50vh, max-content); */
   /* min-height: 461px !important; */
   margin-top: 0.5vh;
   margin-bottom: 0.5vh;
   background-color: var(--canary) !important;
   border: none !important;
+}
+
+.card p,
+.card li {
+  font-size: 0.9rem;
+  margin: 0;
 }
 
 .activity-text {
@@ -200,16 +208,12 @@ h2 {
   width: auto;
 }
 
+.card-list {
+  padding: 1vh;
+}
+
 .list-group {
   list-style: none;
-}
-
-.list-group {
-  padding-bottom: 2vh;
-}
-
-.activities-list {
-  margin-left: 2vh;
 }
 
 #act-final-p {
