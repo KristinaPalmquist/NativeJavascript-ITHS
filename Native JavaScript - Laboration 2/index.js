@@ -7,13 +7,13 @@ document.getElementById('nav-home').style.color = 'black';
 let welcomeText = document.querySelector('#welcome');
 let userName = localStorage.getItem('savedName');
 if (userName) {
-  welcomeText.innerHTML = 'Welcome ' + userName + ' !';
+  welcomeText.innerHTML = 'Welcome ' + userName + '!';
 } else {
   welcomeText.innerHTML = 'Welcome!';
 }
-let welcomeBtn = document.querySelector('#welcomeBtn');
+let welcomeBtn = document.querySelector('#welcome-btn');
 welcomeBtn.addEventListener('click', () => {
-  let welcomeName = document.querySelector('#welcomeName').value;
+  let welcomeName = document.querySelector('#welcome-name').value;
   localStorage.setItem('savedName', welcomeName);
   welcomeText.innerHTML = 'Welcome ' + localStorage.getItem('savedName') + '!';
 });

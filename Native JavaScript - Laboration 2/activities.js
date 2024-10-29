@@ -72,32 +72,43 @@ fetch('https://api.openbrewerydb.org/v1/breweries/random?size=10')
         brewery.brewery_type.substring(0, 1).toUpperCase() +
         brewery.brewery_type.substring(1).toLowerCase();
       activityCards.innerHTML += `
-      <div id="divActivity${actNbr}"  class="card" style="width: 18rem;">
-        <img id='img${actNbr}' class="card-img-top" src = ${imageSrcArray[actNbr]}>
+
+  <div class="col">
+      <div id="divActivity${actNbr}"  class="card h-100" style="width: 21rem;">
+        <img 
+          id='img${actNbr}' class="card-img-top" 
+          src = ${imageSrcArray[actNbr]}>
         <div class="card-header">
             <p>Brewery nr ${actNbr}:</p>
         </div>
         <div class="card-body">
           <h5 class="card-title">${brewery.name}</h5>
           <div class="card-list">
-          
-              <li>Type: ${breweryType}</li>
-              <li>
-                Current location: ${brewery.address_1}, 
-                ${brewery.city}, ${brewery.state}, ${brewery.country}
-              </li>
-              <li>
-                Website: 
-                <a href='${brewery.website_url}' target=_blank >
-                  ${brewery.website_url}
-                </a>
-              </li>
-              <li>
-                Suggested new location: 
-                <strong>${locationNames[actNbr]}</strong>
-              </li>
-         
+            <ul class="list-group list-group-flush">
+                <li  class="list-group-item">Type: ${breweryType}</li>
+                <li  class="list-group-item">
+                  Current location: ${brewery.address_1}, 
+                  ${brewery.city}, ${brewery.state}, ${brewery.country}
+                </li>
+                <li  class="list-group-item">
+                  Suggested new location: 
+                  <strong>${locationNames[actNbr]}</strong>
+                </li>
+            </ul>
           </div>
+        </div>
+          <div class="card-footer">
+          <small class="text-muted">
+            Website: 
+            </small>
+            <br>
+          <small class="text-muted">
+            <a 
+              href='${brewery.website_url}' target=_blank >
+              ${brewery.website_url}
+            </a>
+          </small>
+        </div>
         </div>
       </div>`;
     }

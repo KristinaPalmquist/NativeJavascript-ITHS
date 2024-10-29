@@ -63,17 +63,15 @@ h2 {
 
 /* 04. Welcome Form */
 .welcome {
-  padding: 6vh;
-  padding-top: 3vh;
-  padding-bottom: 3vh;
+  padding: 2vh 4vw;
   background-color: var(--middle-yellow);
 }
 
-.welcomeDiv {
+.welcome-div {
   background-color: var(--middle-blue-green);
 }
 
-#welcomeForm {
+#welcome-form {
   width: 95%;
   margin-left: auto;
   margin-right: auto;
@@ -81,55 +79,54 @@ h2 {
   align-items: center;
 }
 
-.welcomeFormGroup {
+.welcome-form-group {
   display: flex;
+  flex-direction: column;
   padding-bottom: 2vh;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   height: 70px;
 }
-
-#welcomeBtn {
-  margin-top: 1.5vh;
-  margin-bottom: 1.5vh;
-}
-
-.welcomeInput {
-  height: 4.5vh !important;
-  width: 40vw !important;
+.welcome-form-group > div {
+  display: flex;
+  gap: 2vw;
 }
 
 /* 05. Hero */
-.heroImage {
+.hero-image {
   background-image: url(images/color-gcb9e09278_1280.png);
-
-  height: 70vh;
+  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.heroText {
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  position: absolute;
-  top: 37vh;
-  left: 50%;
-  transform: translate(-50%, -50%);
   color: var(--black);
   text-shadow: -1.5px -1.5px 0 var(--canary), 1.5px -1.5px 0 var(--canary),
     -1.5px 1.5px 0 var(--canary), 1.5px 1.5px 0 var(--canary);
+  padding: 2vh;
 }
 
-.heroText h1 {
-  font-size: 4rem;
+.hero-text h1 {
+  font-size: 3rem;
 }
 
-.guideDiv {
+.guidediv {
   padding: 6vh;
 }
 
-.guideBtns {
+.guide-btns {
   display: flex;
   justify-content: space-between;
   margin-top: 3vh;
@@ -138,9 +135,9 @@ h2 {
   text-shadow: none;
 }
 
-.guideBtnLink {
-  color: var(--black) !important;
-  text-decoration: none !important;
+.guide-btns > a:hover {
+  background-color: var(--canary);
+  border: none;
 }
 
 /* 06. Activity Cards */
@@ -154,7 +151,7 @@ h2 {
 }
 
 #activity-div {
-  padding: 2vh 6vh;
+  padding: 2vh 4vw;
 }
 
 #activity-header {
@@ -169,28 +166,23 @@ h2 {
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   background-color: var(--baby-pink);
-  max-height: 100%;
+  /* height: 100%; */
   margin: 1vh;
   padding: 2vh;
 }
+.col {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
 
 .card {
-  height: 100%;
-
-  /* height: clamp(min-content, 50vh, max-content); */
-  /* min-height: 461px !important; */
   margin-top: 0.5vh;
   margin-bottom: 0.5vh;
   background-color: var(--canary) !important;
   border: none !important;
-}
-
-.card p,
-.card li {
-  font-size: 0.9rem;
-  margin: 0;
 }
 
 .activity-text {
@@ -199,6 +191,7 @@ h2 {
 
 .card-body {
   background-color: var(--middle-blue-green);
+  /* flex-grow: 1 !important; */
 }
 
 .card-img-top {
@@ -208,12 +201,12 @@ h2 {
   width: auto;
 }
 
-.card-list {
-  padding: 1vh;
+.list-group-item {
+  background: var(--middle-blue-green) !important;
 }
 
-.list-group {
-  list-style: none;
+.card-footer {
+  
 }
 
 #act-final-p {
@@ -224,8 +217,13 @@ h2 {
 
 /* 07. Cities */
 #cities {
-  padding: 6vh;
+  padding: 2vh 4vw;
   background-color: var(--canary);
+}
+
+#cities > div {
+  display: flex;
+  gap: 4vw;
 }
 
 /* Cities table */
@@ -247,8 +245,13 @@ h2 {
 }
 
 /* Cities form */
+
 #citiesDiv {
   background-color: var(--tangerine);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 #citiesForm {
@@ -289,19 +292,33 @@ h2 {
 }
 
 /* 08. Chart */
-#chartSection {
+#chart-section {
   background-color: var(--middle-blue-green);
+  display: flex;
+  flex-direction: column;
 }
 
-#chartDiv {
-  padding: 6vh;
+#chart-div {
+  padding: 2vh 4vw;
+  height: 60vh;
+}
+
+.chart {
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#my-chart {
+  height: 100%;
 }
 
 #source {
   display: flex;
+  font-size: 0.9rem;
   padding: 0;
-  padding-left: 6vh;
-  padding-bottom: 4vh;
+  padding: 2vh 6vh 0;
 }
 
 /* 09. Footer */
@@ -319,6 +336,10 @@ footer {
 
 .copyright {
   background-color: var(--french-pink);
+}
+
+.copyright > a {
+  text-decoration: none;
 }
 
 /* Validated 2022-11-15 // KP */

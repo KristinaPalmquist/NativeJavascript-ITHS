@@ -26,6 +26,8 @@ const labels = [
   '2020',
   '2021',
   '2022',
+  '2023',
+  '2024',
 ];
 
 const data = {
@@ -36,7 +38,7 @@ const data = {
         'Percentage of graduates that were satisfied with their yrkeshögskola education',
       backgroundColor: '#502274',
       borderColor: '#502274',
-      data: [90, 87, 79, 84, 85, 91, 89, 84, 85, 83, 88],
+      data: [90, 87, 79, 84, 85, 91, 89, 84, 85, 83, 88, 89, 88],
     },
   ],
 };
@@ -55,9 +57,10 @@ const config = {
   },
 };
 
-const myChart = new Chart(document.getElementById('myChart'), config);
+const myChart = new Chart(document.getElementById('my-chart'), config);
 
 let source = document.getElementById('sourceReference');
-source.innerHTML += `<a href='https://www.myh.se/statistik/statistik-yrkeshogskoleutbildningar/nojdhet-med-utbildningen' style="text-decoration: none; color: black">Myndigheten för yrkeshögskolan</a>`;
+source.innerHTML += `<a href='https://www.myh.se/statistik/yrkeshogskoleutbildningar/statistik-program/nojdhet-med-utbildningen'
+target=_blank style="text-decoration: none; color: black">Myndigheten för yrkeshögskolan</a>`;
 
 // Validated 2022-11-15 // KP
