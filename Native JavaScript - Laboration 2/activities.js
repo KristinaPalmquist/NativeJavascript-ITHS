@@ -56,25 +56,31 @@ fetch('https://avancera.app/cities/')
 // Activity
 const activityCards = document.querySelector('#activity-cards-div');
 let actNbrs = [];
-fetch('https://api.openbrewerydb.org/v1/breweries/random?size=10')
-  .then((response) => response.json())
-  .then((data) => {
-    for (let i = 0; i < 10; i++) {
-      let actNbr = i + 1;
-      let brewery = data[i];
+activityCards.innerHTML = '';
+(async () => {
+  for (let i = 0; i < 10; i++) {
+    let actNbr = i + 1;
+    let brewery = await getBrewery();
+    console.log(brewery);
 
-      console.log(brewery);
-
-      actNbrs.push(actNbr);
-      sessionStorage.setItem('nbr' + 1, actNbrs);
-      let locationNames = JSON.parse(sessionStorage.getItem('locations'));
-      let breweryType =
+    actNbrs.push(actNbr);
+    sessionStorage.setItem('nbr' + 1, actNbrs);
+    let locationNames = JSON.parse(sessionStorage.getItem('locations'));
+    let breweryType = 'unknown';
+    if (brewery.brewery_type) {
+      breweryType =
         brewery.brewery_type.substring(0, 1).toUpperCase() +
         brewery.brewery_type.substring(1).toLowerCase();
-      activityCards.innerHTML += `
+    }
+    // let breweryWebsite = 'not available';
+    // if (brewery.website_url) {
+    //   breweryWebsite = brewery.website_url;
+    // }
+
+    activityCards.innerHTML += `
 
   <div class="col">
-      <div id="divActivity${actNbr}"  class="card h-100" style="width: 21rem;">
+      <div id="divActivity${actNbr}"  class="card h-100">
         <img 
           id='img${actNbr}' class="card-img-top" 
           src = ${imageSrcArray[actNbr]}>
@@ -103,15 +109,26 @@ fetch('https://api.openbrewerydb.org/v1/breweries/random?size=10')
             </small>
             <br>
           <small class="text-muted">
-            <a 
+          ${brewery.website_url ?
+            `<a 
               href='${brewery.website_url}' target=_blank >
               ${brewery.website_url}
-            </a>
+            </a>` : `<p>Not available</p>`
+            }
           </small>
         </div>
         </div>
       </div>`;
-    }
-  });
+  }
+})();
+
+async function getBrewery() {
+  const timeStamp = Date.now();
+  const response = await fetch(
+    `https://api.openbrewerydb.org/v1/breweries/random?t=${timeStamp}`
+  );
+  const data = await response.json();
+  return data[0];
+}
 
 // Validated 2022-11-14 // KP
