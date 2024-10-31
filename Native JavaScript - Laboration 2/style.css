@@ -46,7 +46,6 @@ h5 {
 }
 
 h2 {
-  font-size: 3rem !important;
   text-align: center;
   color: var(--black);
 }
@@ -111,6 +110,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
   text-align: center;
   color: var(--black);
   text-shadow: -1.5px -1.5px 0 var(--canary), 1.5px -1.5px 0 var(--canary),
@@ -122,8 +122,8 @@ h2 {
   font-size: 3rem;
 }
 
-.guidediv {
-  padding: 6vh;
+.guide-div {
+  padding: 2vh;
 }
 
 .guide-btns {
@@ -168,7 +168,6 @@ h2 {
   flex-wrap: wrap;
   align-items: flex-start;
   background-color: var(--baby-pink);
-  /* height: 100%; */
   margin: 1vh;
   padding: 2vh;
 }
@@ -191,7 +190,6 @@ h2 {
 
 .card-body {
   background-color: var(--middle-blue-green);
-  /* flex-grow: 1 !important; */
 }
 
 .card-img-top {
@@ -241,7 +239,6 @@ h2 {
 }
 
 /* Cities form */
-
 #citiesDiv {
   background-color: var(--tangerine);
   display: flex;
